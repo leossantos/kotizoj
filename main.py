@@ -1,5 +1,4 @@
-from obj.Wallet import Wallet
-from obj.Asset import Asset
+from kotizoj import Wallet, Asset
 
 
 # Create wallet
