@@ -1,6 +1,7 @@
 class Wallet():
-    def __init__(self, name, balance):
+    def __init__(self, name, balance, asset_type):
         self.name = name
+        self.asset_type = asset_type
         self.balance = balance
         self.assets = []
     
