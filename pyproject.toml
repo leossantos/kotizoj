@@ -1,18 +1,27 @@
-[tool.poetry]
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
 name = "kotizoj"
 version = "0.1.0"
-description = "Pessoal Finance Applications"
-authors = ["Leonardo Santos <leoss33@outlook.com.br>"]
+description = "A Python project for managing assets"
+authors = [
+    { name = "Leonardo", email = "leoss33@outlook.com.br" }
+]
+dependencies = [
+    "yfinance >= 0.1.70",
+]
+requires-python = ">=3.8"
 readme = "README.md"
+keywords = ["finance", "assets", "management"]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-yfinance = "^0.2.32"
+[project.optional-dependencies]
+dev = [
+    "pytest >= 7.0.0",
+    "black >= 22.0.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.4.3"
-black = "^23.11.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.black]
+line-length = 88
+target-version = ["py38"]
