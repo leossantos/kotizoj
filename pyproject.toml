@@ -25,3 +25,6 @@ dev = [
 [tool.black]
 line-length = 88
 target-version = ["py38"]
+
+[tool.pylint.messages_control]
+disable = ["C0114"]

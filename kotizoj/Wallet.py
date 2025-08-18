@@ -1,21 +1,16 @@
-class Wallet():
-    def __init__(self, name, balance, asset_type):
-        self.name = name
-        self.asset_type = asset_type
-        self.balance = balance
+from .assets.Asset import Asset
+class Wallet:
+    def __init__(self) -> None:
         self.assets = []
-    
-    def add_asset(self, asset):
-        self.assets.append(asset)
-    
-    def show(self):
-        print(f"Wallet: {self.name}")
-        for asset in self.assets:
-            print(f"  {asset.name}")
+        self.allocation = {}
+        self.optimal_allocation = {}
 
-    def show_balance(self):
-        print(f"Balance: {self.balance}")
-        for asset in self.assets:
-            print(f"  {asset.name}: {asset.price}")
-            self.balance += asset.price
-        print(f"Total: {self.balance}")
+    @property
+    def total(self):
+        pass
+
+    def allocate(self, contribuition: float):
+        pass
+
+    def add_asset(self, assets: Asset):
+        pass
