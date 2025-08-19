@@ -10,7 +10,7 @@ authors = [
     { name = "Leonardo", email = "leoss33@outlook.com.br" }
 ]
 dependencies = [
-    "yfinance >= 0.1.70",
+    "yfinance >= 0.2.65",
 ]
 requires-python = ">=3.8"
 readme = "README.md"
@@ -20,6 +20,7 @@ keywords = ["finance", "assets", "management"]
 dev = [
     "pytest >= 7.0.0",
     "black >= 22.0.0",
+    "pylint"
 ]
 
 [tool.black]
@@ -27,4 +28,4 @@ line-length = 88
 target-version = ["py38"]
 
 [tool.pylint.messages_control]
-disable = ["C0114"]
+disable = ["C0114", "C0115", "C0116", "C0111"]
