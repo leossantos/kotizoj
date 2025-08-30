@@ -12,20 +12,26 @@ authors = [
 dependencies = [
     "yfinance >= 0.2.65",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 readme = "README.md"
 keywords = ["finance", "assets", "management"]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-    "pytest >= 7.0.0",
-    "black >= 22.0.0",
-    "pylint"
+  {include-group = "lint"},
+  {include-group = "test"}
+]
+lint = [
+    "black>=25.1.0",
+    "pylint>=3.3.8",
+]
+test = [
+    "pytest>=8.4.1",
 ]
 
 [tool.black]
 line-length = 88
-target-version = ["py38"]
+target-version = ["py312"]
 
 [tool.pylint.messages_control]
 disable = ["C0114", "C0115", "C0116", "C0111"]
