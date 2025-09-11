@@ -19,5 +19,5 @@ class Wallet:
     def __str__(self) -> str:
         ret_str = ""
         for asset in self.assets:
-            ret_str += f"{asset.name}: {asset.value}\n"
+            ret_str += f"{asset.name}: R$ {asset.value}\n"
         return ret_str
