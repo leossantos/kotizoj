@@ -15,6 +15,18 @@ dependencies = [
 requires-python = ">=3.12"
 readme = "README.md"
 keywords = ["finance", "assets", "management"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+license = { text = "MIT" }
+[project.urls]
+Homepage = "https://github.com/leoss33/kotizoj"
+Repository = "https://github.com/leoss33/kotizoj"
+Issues = "https://github.com/leoss33/kotizoj/issues"
 
 [dependency-groups]
 dev = [
