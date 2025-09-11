@@ -23,5 +23,3 @@ def get_brl_dollar_cotation():
     response = requests.request("GET", url,  timeout=100)
 
     return response.json()["value"][0]["cotacaoVenda"]
-
-print(get_brl_dollar_cotation())
