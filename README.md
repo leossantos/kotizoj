@@ -1,51 +1,34 @@
 # kotizoj
-Calculadora de rendimento de investimentos de renda fixa
 
-## Versionamento Automático
+## Sobre o Projeto
 
-Este projeto utiliza o [release-please](https://github.com/googleapis/release-please) para versionamento automático baseado em [Conventional Commits](https://conventionalcommits.org/).
+O **kotizoj** é uma biblioteca Python para gerenciamento de carteira de investimentos que permite acompanhar e calcular o valor de diferentes tipos de ativos financeiros. O projeto oferece uma estrutura modular para trabalhar com ações, ETFs, criptomoedas e títulos do tesouro.
 
-### Como funciona
+## Funcionalidades
 
-1. **Commits convencionais**: Use mensagens de commit seguindo o padrão Conventional Commits:
-   - `feat:` para novas funcionalidades
-   - `fix:` para correções de bugs
-   - `perf:` para melhorias de performance
-   - `docs:` para documentação
-   - `style:` para formatação
-   - `refactor:` para refatoração
-   - `test:` para testes
-   - `chore:` para tarefas de manutenção
+- **Gestão de Carteira**: Classe `Wallet` para organizar e gerenciar múltiplos ativos
+- **Suporte a Múltiplos Ativos**:
+  - **Ações**: Integração com Yahoo Finance para cotações em tempo real
+  - **ETFs**: Cálculo de valores baseado em cotações do mercado brasileiro
+  - **Criptomoedas**: Preços em tempo real via CoinGecko API
+  - **Títulos do Tesouro**: Suporte para títulos de renda fixa (em desenvolvimento)
+- **Cálculos Automáticos**: Valor total da carteira baseado em preços atuais
+- **Integração com APIs**: Yahoo Finance e CoinGecko para dados em tempo real
+- **Conversão de Moedas**: Cálculo automático de cotações USD/BRL
 
-2. **Versionamento automático**:
-   - `feat:` incrementa a versão minor (0.1.0 → 0.2.0)
-   - `fix:` incrementa a versão patch (0.1.0 → 0.1.1)
-   - `feat!:` ou `fix!:` com `!` incrementa a versão major (0.1.0 → 1.0.0)
+## Tecnologias Utilizadas
 
-3. **Changelog automático**: O arquivo `CHANGELOG.md` é atualizado automaticamente com as mudanças
+- Python 3.12+
+- yfinance (integração com Yahoo Finance)
+- requests (chamadas para APIs externas)
+- CoinGecko API (preços de criptomoedas)
+- Banco Central do Brasil API (cotações de moedas)
 
-4. **Releases**: Pull requests são criados automaticamente com as mudanças de versão
+## Estrutura do Projeto
 
-### Exemplos de commits
-
-```bash
-# Nova funcionalidade (versão minor)
-git commit -m "feat: add support for crypto currency tracking"
-
-# Correção de bug (versão patch)
-git commit -m "fix: resolve calculation error in portfolio value"
-
-# Breaking change (versão major)
-git commit -m "feat!: change API interface for asset creation"
-
-# Documentação (não afeta versão)
-git commit -m "docs: update README with installation instructions"
 ```
-
-### Configuração
-
-O release-please está configurado através dos seguintes arquivos:
-- `release-please-config.json`: Configuração principal
-- `.github/workflows/release-please.yml`: Workflow do GitHub Actions
-- `CHANGELOG.md`: Changelog automático
-- `pyproject.toml`: Versão do projeto Python
+kotizoj/
+├── assets/          # Classes de diferentes tipos de ativos
+├── utils/           # Utilitários para APIs externas
+└── wallet.py        # Classe principal para gestão da carteira
+```
