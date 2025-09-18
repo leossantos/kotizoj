@@ -1,6 +1,6 @@
-from ..utils.log_config import logger
+import logging
 
-logger.name = __name__
+logger = logging.getLogger(__name__)
 
 class Asset():
     def __init__(self, name: str, country: str, quantity: float) -> None:

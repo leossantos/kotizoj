@@ -1,6 +1,7 @@
 from .assets.asset import Asset
-from .utils.log_config import logger
+import logging
 
+logger = logging.getLogger(__name__)
 
 
 

@@ -1,7 +1,8 @@
 from .asset import Asset
 from ..utils.utils import get_bitcoin, get_brl_dollar_cotation
-from ..utils.log_config import logger
+import logging
 
+logger = logging.getLogger(__name__)
 
 
 class CryptoCurrency(Asset):

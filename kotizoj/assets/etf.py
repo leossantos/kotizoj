@@ -1,8 +1,8 @@
 from .asset import Asset
 import yfinance as yf
-from ..utils.log_config import logger
+import logging
 
-
+logger = logging.getLogger(__name__)
 
 class ETF(Asset):
     def __init__(self, name: str, country: str, quantity: float) -> None:

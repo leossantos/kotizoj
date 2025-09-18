@@ -1,9 +1,9 @@
 import os
 import requests
 
-from ..utils.log_config import logger
+import logging
 
-
+logger = logging.getLogger(__name__)
 
 def get_bitcoin():
     logger.info("Getting price of bitcoin")
@@ -16,7 +16,6 @@ def get_bitcoin():
     response = requests.request(
         "GET", url, headers=headers, params=params, timeout=100
     )
-
     return response.json()["bitcoin"]["usd"]
 
 

@@ -1,7 +1,8 @@
 from kotizoj.wallet import Wallet
 from kotizoj.assets import Asset, Stock, CryptoCurrency, ETF
-from kotizoj.utils.log_config import logger
+import logging
 
+logger = logging.getLogger(__name__)
 
 def asset_creator(asset_type: str, name: str, country:str, quantity:str) -> Asset: 
     if asset_type == "stock":
@@ -16,6 +17,7 @@ def asset_creator(asset_type: str, name: str, country:str, quantity:str) -> Asse
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     logger.info("Starting Kotizoj")
     first_wallet = Wallet()
     agro3 = asset_creator("stock","AGRO3", "Brasil", 8)
