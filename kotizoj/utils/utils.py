@@ -1,8 +1,12 @@
 import os
 import requests
 
+from ..utils.log_config import logger
+
+logger.name = __name__
 
 def get_bitcoin():
+    logger.info("Getting price of bitcoin")
     url = "https://api.coingecko.com/api/v3//simple/price"
     params = {"vs_currencies": "usd", "ids": "bitcoin"}
     # Pegando a chave da API de uma variável de ambiente
