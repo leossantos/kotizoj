@@ -11,7 +11,8 @@ class Asset():
 
     @property
     def value(self):
-        pass
+        logger.info("Calculating value of asset %s", self.name)
+        return round(self.quantity * self.price, 2)
 
     @property
     def price(self):

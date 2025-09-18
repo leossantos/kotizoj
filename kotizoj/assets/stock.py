@@ -2,7 +2,7 @@ from .asset import Asset
 import yfinance as yf
 from ..utils.log_config import logger
 
-logger.name = __name__
+
 
 class Stock(Asset):
     def __init__(self, name: str, country: str, quantity: float) -> None:
@@ -10,12 +10,6 @@ class Stock(Asset):
         self.name = name
         self.country = country
         self.quantity = quantity
-
-
-    @property
-    def value(self):
-        logger.info("Calculating value of stock %s", self.name)
-        return self.quantity * self.price
 
 
     @property

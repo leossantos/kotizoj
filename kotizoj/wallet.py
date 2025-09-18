@@ -2,7 +2,7 @@ from .assets.asset import Asset
 from .utils.log_config import logger
 
 
-logger.name = __name__
+
 
 class Wallet:
     def __init__(self) -> None:
@@ -13,7 +13,8 @@ class Wallet:
 
     @property
     def total(self):
-        pass
+        logger.info("Calculating total value of wallet")
+        return sum(asset.value for asset in self.assets)
 
     def allocate(self, contribuition: float):
         pass
@@ -26,4 +27,5 @@ class Wallet:
         ret_str = ""
         for asset in self.assets:
             ret_str += f"{asset.name}: R$ {asset.value}\n"
+        ret_str += f"Total: R$ {self.total}\n"
         return ret_str

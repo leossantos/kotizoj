@@ -2,7 +2,7 @@ from .asset import Asset
 from ..utils.utils import get_bitcoin, get_brl_dollar_cotation
 from ..utils.log_config import logger
 
-logger.name = __name__
+
 
 class CryptoCurrency(Asset):
     def __init__(self, name: str, country: str, quantity: float) -> None:
@@ -10,11 +10,6 @@ class CryptoCurrency(Asset):
         self.name = name
         self.country = country
         self.quantity = quantity
-
-    @property
-    def value(self):
-        logger.info("Calculating value of crypto currency %s", self.name)
-        return self.quantity * self.price
 
     @property
     def price(self):

@@ -3,7 +3,7 @@ import requests
 
 from ..utils.log_config import logger
 
-logger.name = __name__
+
 
 def get_bitcoin():
     logger.info("Getting price of bitcoin")

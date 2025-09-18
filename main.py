@@ -1,5 +1,6 @@
 from kotizoj.wallet import Wallet
 from kotizoj.assets import Asset, Stock, CryptoCurrency, ETF
+from kotizoj.utils.log_config import logger
 
 
 def asset_creator(asset_type: str, name: str, country:str, quantity:str) -> Asset: 
@@ -9,11 +10,13 @@ def asset_creator(asset_type: str, name: str, country:str, quantity:str) -> Asse
         return CryptoCurrency(name, country, quantity)
     if asset_type == "etf":
         return ETF(name, country, quantity)
+    logger.error("Invalid asset type: %s", asset_type)
+    raise ValueError(f"Invalid asset type: {asset_type}")
 
 
 
 if __name__ == "__main__":
-    print("Hello, World!")
+    logger.info("Starting Kotizoj")
     first_wallet = Wallet()
     agro3 = asset_creator("stock","AGRO3", "Brasil", 8)
     b5p211 = asset_creator("etf","B5P211", "Brasil", 10)
